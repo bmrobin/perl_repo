@@ -2,6 +2,15 @@
 # db_update($)
 #	Used to run update statement and
 #	return number of rows updated
+#
+#	pass DB handler like:
+#	$db = DBI->connect("dbi:Oracle:[server]", "user", "pass");
+#
+#	usage:
+#	$result = db_update('some sql', $db)
+#
+#	close handler:
+#	$db->disconnect()
 ###################################################
 
 sub db_update($@) {

@@ -9,13 +9,19 @@ use DBI;
 #		ROW1a	ROW1b	ROW1c
 #		ROW2a	ROW2b	ROW2c
 #		...	...	...
-#
+#	
+#	pass DB handler like:
+#	$db = DBI->connect("dbi:Oracle:[server]", "user", "pass");
+#	
 #	Usage:
-#	$result = db_select_all_ar_ref('some sql')
+#	$result = db_select_all_ar_ref('some sql', $db)
 #	for $i ( 0 .. (@{$result} - 1) ) {
 #		$resultSet->[$i][0]
 #		...etc...
 #	}
+#
+#	close handler:
+#	$db->disconnect()
 ###################################################
 sub db_select_all_ar_ref($@) {
 	my $ar_ref;

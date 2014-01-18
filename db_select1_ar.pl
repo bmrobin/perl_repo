@@ -4,6 +4,15 @@ use DBI;
 # db_select1_ar($)
 #	Used to query 1 columns, multiple rows
 #	and return array
+#	
+#	pass DB handler like:
+#	$db = DBI->connect("dbi:Oracle:[server]", "user", "pass");
+#
+#	usage:
+#	@result = db_select1_ar('some sql', $db)
+#
+#	close handler:
+#	$db->disconnect()
 ###################################################
 
 sub db_select1_ar($@) {
