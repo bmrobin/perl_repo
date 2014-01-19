@@ -3,21 +3,17 @@
 this repository is for generic perl scripts. i created this as a way to quickly access
 frequently used (and reused) scripts for work and home
 
-    these subroutines perform various database tasks using the Perl DBI module.
-- db_select1.pl
-- db_select1_ar.pl
-- db_select_all_ar_ref.pl
-- db_update.pl
+    DBI examples
+database perl scripts that use the DBI module for selecting and upating data. see each file for more info. i use the Oracle db driver
 
-    custom implementation of a common 'indexof' function - just for fun
--indexof.pl
+    indexof
+this is my implementation of a common indexof function. i wrote this for fun because i found myself using many nested substring functions to return what i wanted.
 
-    finds 3 largest files in specified directories
-i used to spend a lot of time digging through Windows servers looking for big log files. while i have disk usage alerts, this helps me quickly find which log files are the culprits in taking up a lot of space.
--large_logsize.pl
+    large_logsize
+finds 3 largest files in specified directories. i used to spend a lot of time digging through Windows servers looking for big log files. while i have disk usage alerts, this helps me quickly find which log files are the culprits in taking up a lot of space.
 
-    written for the /r/dailyprogrammer subreddit - just for fun
--pangram.pl
+    pangram
+written for the /r/dailyprogrammer subreddit. just out here for fun
 
-    this script leverages the Perl Mail::Sender module to send emails
--send_email.pl
+    send_email
+an implementation of the Mail::Sender module
