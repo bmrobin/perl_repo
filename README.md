@@ -17,3 +17,11 @@ written for the /r/dailyprogrammer subreddit. just out here for fun
 
     send_email
 an implementation of the Mail::Sender module
+
+    config_file
+this reads a config text file of format
+```
+# comment line
+key=value
+```
+it returns a hash of all the keys/values and has a subroutine for printing them all out
