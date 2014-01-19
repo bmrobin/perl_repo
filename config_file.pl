@@ -1,5 +1,10 @@
 # THIS SCRIPT CONTAINS SUBROUTINES FOR
-# HANDLING A MOMENTUM CONFIG FILE
+# HANDLING A CONFIG FILE
+
+# file is of format:
+#	#comment line
+#	key=value
+# it will ignore comment lines and empty lines
 
 use strict;
 use warnings;
