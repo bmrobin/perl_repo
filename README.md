@@ -10,13 +10,14 @@ frequently used (and reused) scripts for work and home
 - db_update.pl
 
     custom implementation of a common 'indexof' function - just for fun
-- indexof.pl
+-indexof.pl
 
-    i used to spend a lot of time digging through Windows servers looking for big log files. while i have disk usage alerts, this helps me quickly find which log files are the culprits in taking up a lot of space.
-- large_logsize.pl
+    finds 3 largest files in specified directories
+i used to spend a lot of time digging through Windows servers looking for big log files. while i have disk usage alerts, this helps me quickly find which log files are the culprits in taking up a lot of space.
+-large_logsize.pl
 
     written for the /r/dailyprogrammer subreddit - just for fun
-- pangram.pl
+-pangram.pl
 
     this script leverages the Perl Mail::Sender module to send emails
-- send_email.pl
+-send_email.pl
