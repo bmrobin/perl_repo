@@ -25,3 +25,6 @@ this reads a config text file of format
 key=value
 ```
 it returns a hash of all the keys/values and has a subroutine for printing them all out
+
+    recurse_directory
+perl equivalent of windows command "dir /s /b"
