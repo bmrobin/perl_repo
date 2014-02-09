@@ -14,9 +14,11 @@ use strict;
 use warnings;
 
 # TESTING
-#my $string = "This strong tests my string!";
-#my $test = &indexof($string, "str");
-#print $test ."\n";
+my $string = "This string tests my string index of sub";
+print "Pass\n" if (&indexof($string, "str", 1) == 5);
+print "Pass\n" if (&indexof($string, "str", 2) == 21);
+print "Pass\n" if (&indexof($string, "str")    == 5);
+print "Pass\n" if (&indexof($string, "non")    == -1);
 
 sub indexof {
 	my $str = shift();
