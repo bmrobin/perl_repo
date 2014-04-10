@@ -5,13 +5,14 @@ use Switch;
 
 my $cc_number = "";
 
-while ($cc_number ne "exit") {
-	
-	print "Enter credit card number:";
-	$cc_number = <>;
-	chomp($cc_number);
-	
-	switch ($cc_number) {
+
+print "Enter credit card number:";
+$cc_number = <>;
+chomp($cc_number);
+identify_card($cc_number);
+
+sub identify_card {
+	switch ($_[0]) {
 		case /[^\d]/ {print "credit card must contain numbers only\n";}
 		case /^34|^37/ {print "American Express\n";}
 		case /^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9][0-9]|9[0-2][0-5])|64[4-9]|65)/ {print "Discover Card\n";}
