@@ -5,11 +5,11 @@ frequently used (and reused) scripts for work and home.
 
 DBI examples
 ------------
-Database perl scripts that use the DBI module for selecting and upating data. See each file for more info. I use the Oracle driver
+Database perl scripts that use the ```DBI``` module for selecting and upating data. See each file for more info. I use the Oracle driver
 
 indexof
 -------
-This is my implementation of a common indexof function. Perl has its own indexof function, I wrote this purely for educational and entertainment purposes.
+This is my implementation of a common indexof function. Perl has its own ```indexof``` function, I wrote this purely for educational and entertainment purposes.
 
 large_logsize
 -------------
@@ -21,7 +21,7 @@ Written for the /r/dailyprogrammer subreddit - [Challenge #139](http://www.reddi
 
 send_email
 ----------
-An implementation of the Mail::Sender module
+An implementation of the ```Mail::Sender``` module
 
 config_file
 -----------
@@ -34,4 +34,5 @@ It returns a hash of all the keys/values and has a subroutine for neatly printin
 
 recurse_directory
 -----------------
-Perl equivalent of Windows command "dir /s /b"
+Perl equivalent of Windows command 
+```dir /s /b```
