@@ -7,6 +7,10 @@ DBI examples
 ------------
 Database perl scripts that use the ```DBI``` module for selecting and upating data. See each file for more info. I use the Oracle driver
 
+credit_card_regex
+-----------------
+Subroutine to identify a credit card provider based on the card number. Uses regular expressions based on the [ANSI definitions](http://en.wikipedia.org/wiki/Bank_card_number#Issuer_identification_number_.28IIN.29) of the card numbers.
+
 indexof
 -------
 This is my implementation of a common indexof function. Perl has its own ```indexof``` function, I wrote this purely for educational and entertainment purposes.
