@@ -1,30 +1,42 @@
-	BMROBIN PERL_REPO
+Perl Code Snippet Repository
+============================
+This repository is for generic Perl scripts and code snippets. I created this as a way to quickly access
+frequently used (and reused) scripts for work and home.
 
-this repository is for generic perl scripts. i created this as a way to quickly access
-frequently used (and reused) scripts for work and home
+DBI examples
+------------
+Database perl scripts that use the ```DBI``` module for selecting and upating data. See each file for more info. I use the Oracle driver
 
-    DBI examples
-database perl scripts that use the DBI module for selecting and upating data. see each file for more info. i use the Oracle db driver
+credit_card_regex
+-----------------
+Subroutine to identify a credit card provider based on the card number. Uses regular expressions based on the [ANSI definitions](http://en.wikipedia.org/wiki/Bank_card_number#Issuer_identification_number_.28IIN.29) of the card numbers.
 
-    indexof
-this is my implementation of a common indexof function. i wrote this for fun because i found myself using many nested substring functions to return what i wanted.
+indexof
+-------
+This is my implementation of a common indexof function. Perl has its own ```indexof``` function, I wrote this purely for educational and entertainment purposes.
 
-    large_logsize
-finds 3 largest files in specified directories. i used to spend a lot of time digging through Windows servers looking for big log files. while i have disk usage alerts, this helps me quickly find which log files are the culprits in taking up a lot of space.
+large_logsize
+-------------
+Finds the 3 largest files in specified directories. I used to spend a lot of time digging through Windows servers looking for big log files. While I have disk usage alerts, this helps me quickly find which log files are the culprits in taking up a lot of space.
 
-    pangram
-written for the /r/dailyprogrammer subreddit. just out here for fun
+pangram
+-------
+Written for the /r/dailyprogrammer subreddit - [Challenge #139](http://www.reddit.com/r/dailyprogrammer/comments/1pwl73/11413_challenge_139_easy_pangrams/)
 
-    send_email
-an implementation of the Mail::Sender module
+send_email
+----------
+An implementation of the ```Mail::Sender``` module
 
-    config_file
-this reads a config text file of format
+config_file
+-----------
+This reads a standard configuration text file of format
 ```
 # comment line
 key=value
 ```
-it returns a hash of all the keys/values and has a subroutine for printing them all out
+It returns a hash of all the keys/values and has a subroutine for neatly printing them all out.
 
-    recurse_directory
-perl equivalent of windows command "dir /s /b"
+recurse_directory
+-----------------
+Perl equivalent of Windows command 
+```dir /s /b```
