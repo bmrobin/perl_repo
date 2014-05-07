@@ -4,41 +4,63 @@
 
 use strict;
 use warnings;
+use Data::Dumper;
 
-my @directories = (
-	'"C:\Documents and Settings\bmrobins\Desktop\Downloads"',
-	'"C:\Documents and Settings\bmrobins\Desktop\ffx_files"'
-	);
-
-my $message = "\n\t*** 3 Largest Files ***\n\t-----------------------\n";
-
-foreach my $each (@directories) {
-	$message = $message . "$each\n";
-	largest_files($each);
+if ($^O ne "MSWin32") {
+	die "Invalid operating system detected. This program is written for Windows";
 }
 
-print $message;
+my @directories = (
+	'C:\Users\bmrobins\Desktop\Downloads',
+	'C:\Users\bmrobins\Desktop\code'
+	);
+
+foreach my $each (@directories) {
+	my $message = "\n\t*** 3 Largest Files ***\n\t-----------------------\n";
+	$message = $message . "\t$each\n\n";
+	print $message;
+	largest_files($each);
+	print "\n";
+}
 
 sub largest_files {
 	my $dir = shift();
+	my %logs;
 	
+	unless (-d $dir) {
+		print "$dir is not a directory or could not be accessed\n";
+		return;
+	}
 	my @dirlist = `dir /o-s/-c $dir`;
 	my @size1 = split(' ',$dirlist[5]);
 	my @size2 = split(' ',$dirlist[6]);
 	my @size3 = split(' ',$dirlist[7]);
-	my $size_1 = $size1[3]/1024/1024/1024;
-	my $size_2 = $size2[3]/1024/1024/1024;
-	my $size_3 = $size3[3]/1024/1024/1024;
 	
-	format_output($size_1, $size_2, $size_3);
+	my $size_1 = $size1[3]/1024/1024/1024;
+	my $file_1 = $size1[4];
+	my $size_2 = $size2[3]/1024/1024/1024;
+	my $file_2 = $size2[4];
+	my $size_3 = $size3[3]/1024/1024/1024;
+	my $file_3 = $size3[4];
+	
+	$logs{$file_1} = $size_1;
+	$logs{$file_2} = $size_2;
+	$logs{$file_3} = $size_3;
+	
+	format_output(%logs);
 }
 
 sub format_output {
-	my $s1 = shift();
-	my $s2 = shift();
-	my $s3 = shift();
+	my %hash = @_;
 	
-	$message = $message . "\t" . sprintf("%.2f", $s1) . " Gb" . "\n";
-	$message = $message . "\t" . sprintf("%.2f", $s2) . " Gb" . "\n";
-	$message = $message . "\t" . sprintf("%.2f", $s3) . " Gb" . "\n\n";
+	my $max = 0;
+	foreach (keys %hash) {
+		if (length($_) > $max ){
+			$max = length($_);
+		}
+	}
+	
+	foreach (sort keys %hash) {
+		printf("%-*s\t= %.2fGb\n", $max, $_, $hash{$_});
+	}
 }
